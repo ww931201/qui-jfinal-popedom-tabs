@@ -7214,3 +7214,555 @@ java.lang.NullPointerException
 
 2017-10-23 17:05:08
 [INFO]-[Thread: qtp511473681-38]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:36:27
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: port: 80 already in use!
+java.lang.IllegalStateException: port: 80 already in use!
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:87)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+
+2017-11-10 13:36:40
+[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+File not found : D:\workspace - web2\cwzywst\target\classes/sql/user.sql
+java.lang.RuntimeException: File not found : D:\workspace - web2\cwzywst\target\classes/sql/user.sql
+	at com.jfinal.template.FileStringSource.getContent(FileStringSource.java:70)
+	at com.jfinal.template.Engine.buildTemplateByFileStringSource(Engine.java:147)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:133)
+	at com.jfinal.plugin.activerecord.sql.SqlKit.parseSqlTemplate(SqlKit.java:92)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:216)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+
+2017-11-10 13:36:40
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+File not found : D:\workspace - web2\cwzywst\target\classes/sql/user.sql
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+File not found : D:\workspace - web2\cwzywst\target\classes/sql/user.sql
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+Caused by: java.lang.RuntimeException: File not found : D:\workspace - web2\cwzywst\target\classes/sql/user.sql
+	at com.jfinal.template.FileStringSource.getContent(FileStringSource.java:70)
+	at com.jfinal.template.Engine.buildTemplateByFileStringSource(Engine.java:147)
+	at com.jfinal.template.Engine.getTemplate(Engine.java:133)
+	at com.jfinal.plugin.activerecord.sql.SqlKit.parseSqlTemplate(SqlKit.java:92)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:216)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+
+2017-11-10 13:37:46
+[ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: init datasource error
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:675)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:448)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:383)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:776)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:432)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:786)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:218)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+
+2017-11-10 13:37:46
+[ERROR]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: dataSource init error
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:675)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:448)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:383)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:776)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:432)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:786)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:218)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+
+2017-11-10 13:37:46
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2017-11-10 13:37:46
+[ERROR]-[Thread: main]-[com.jfinal.core.Config.startPlugins()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+com.jfinal.plugin.activerecord.ActiveRecordException: java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:218)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+Caused by: java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:675)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:448)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:383)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:776)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:432)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:786)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
+	... 20 more
+
+2017-11-10 13:37:46
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+java.lang.RuntimeException: Plugin start error: com.jfinal.plugin.activerecord.ActiveRecordPlugin. 
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at com.jfinal.core.Config.startPlugins(Config.java:116)
+	at com.jfinal.core.Config.configJFinal(Config.java:53)
+	at com.jfinal.core.JFinal.init(JFinal.java:63)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:119)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:724)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1250)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:492)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:131)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:70)
+	at com.jfinal.core.JFinal.start(JFinal.java:159)
+	at com.sinorail.cwzywst.MainConfig.main(MainConfig.java:139)
+Caused by: com.jfinal.plugin.activerecord.ActiveRecordException: java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:55)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:218)
+	at com.jfinal.core.Config.startPlugins(Config.java:107)
+	... 18 more
+Caused by: java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:447)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:389)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:382)
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:675)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:448)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:513)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:227)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:383)
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:776)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:432)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:553)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:254)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:32)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:528)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:786)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:602)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:876)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:872)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:97)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:43)
+	... 20 more
+
+2017-11-10 13:38:16
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2017-11-10 13:38:42
+[INFO]-[Thread: qtp495792375-38]-[com.sinorail.cwzywst.action.LoginAction.login()]: root IP: 0:0:0:0:0:0:0:1 用户登录！ID: 4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:43
+[INFO]-[Thread: qtp495792375-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:43
+[INFO]-[Thread: qtp495792375-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:43
+[INFO]-[Thread: qtp495792375-38]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:43
+[INFO]-[Thread: qtp495792375-38]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:43
+[INFO]-[Thread: qtp495792375-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:43
+[INFO]-[Thread: qtp495792375-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:44
+[INFO]-[Thread: qtp495792375-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:45
+[INFO]-[Thread: qtp495792375-39]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:45
+[INFO]-[Thread: qtp495792375-39]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:45
+[INFO]-[Thread: qtp495792375-39]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedomMatch/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:45
+[INFO]-[Thread: qtp495792375-38]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:48
+[INFO]-[Thread: qtp495792375-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:48
+[INFO]-[Thread: qtp495792375-37]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:48
+[INFO]-[Thread: qtp495792375-38]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:48
+[INFO]-[Thread: qtp495792375-38]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:48
+[INFO]-[Thread: qtp495792375-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:48
+[INFO]-[Thread: qtp495792375-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:51
+[INFO]-[Thread: qtp495792375-37]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/login/logOut ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:38:51
+[INFO]-[Thread: qtp495792375-37]-[com.sinorail.cwzywst.action.LoginAction.logOut()]: root IP: 0:0:0:0:0:0:0:1 退出登录！ID: 4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:24
+[INFO]-[Thread: main]-[com.alibaba.druid.pool.DruidDataSource.init()]: {dataSource-1} inited
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.action.LoginAction.login()]: root IP: 0:0:0:0:0:0:0:1 用户登录！ID: 4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:34
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:38
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:38
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:38
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:38
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:38
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:39:38
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:07
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:07
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:07
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:07
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:07
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:07
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:08
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:08
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:08
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:09
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:09
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedomMatch/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/user ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/user/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-36]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:10
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:11
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:11
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:11
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:12
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:12
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:12
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:40:12
+[INFO]-[Thread: qtp537548559-34]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:11
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:11
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:11
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:11
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:11
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedomMatch/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:12
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/role/addView ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:12
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:12
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:14
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/user ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:14
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:14
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:14
+[INFO]-[Thread: qtp537548559-37]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/user/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:15
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/user/addView ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:16
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:16
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:16
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/user/roleList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:26
+[INFO]-[Thread: qtp537548559-31]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:26
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:26
+[INFO]-[Thread: qtp537548559-35]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:26
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/list ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:27
+[INFO]-[Thread: qtp537548559-30]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/open ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:27
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/left ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:27
+[INFO]-[Thread: qtp537548559-37]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:27
+[INFO]-[Thread: qtp537548559-37]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:27
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.isExistUrl()]: ---------未授权路径: (/popedom/permissionButtonList) 用户: root IP: 0:0:0:0:0:0:0:1 ID:4F0FB8C505AB00A4E0537F00000100A4
+
+2017-11-10 13:41:27
+[INFO]-[Thread: qtp537548559-33]-[com.sinorail.cwzywst.aop.LoginInterceptor.intercept()]: root IP:0:0:0:0:0:0:0:1 uri:/popedom/permissionButtonList ID:4F0FB8C505AB00A4E0537F00000100A4
