@@ -1,0 +1,152 @@
+#include("/WEB-INF/view/common/qui/header.html")
+
+<!--数据表格start-->
+<script src="/libs/js/table/quiGrid.js" type="text/javascript"></script>
+<!--数据表格end-->
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="box2"  overflow="auto" showStatus="false" panelTitle="权限列表">
+		<div id="cusBoxContent1"  style="width:100%;">
+			<div id="maingrid"></div>
+    	</div>
+    </div>
+<script type="text/javascript">
+	var g;
+	isMenuData = {list:[{value:1,key:"是"},{value:2,key:"否"}]};
+	targetData = {list:[
+		{value:"frmright",key:"frmright"},
+		{value:"_blank",key:"_blank"},
+		{value:"_self",key:"_self"},
+		{value:"_top",key:"_top"},
+		{value:"_parent",key:"_parent"}
+	]};
+	function initComplete(){
+	     //usePager: false设置为不分页
+		 g = $("#maingrid").quiGrid({
+	        columns: [
+	        	{ display: '名称', name: 'POPEDOM_NAME', id:'ID', align: 'left', editor: { type: 'text'}, width: '11%'},
+	        	{ display: 'URL', name: 'FORWARD_ACTION', align: 'left', editor: { type: 'text'}, width: '11%'},
+	        	{ display: '是否是菜单', name: 'IS_MENU', align: 'CENTER', editor: { type: 'select', data:isMenuData}, width: '11%',render:function (item){
+              	  for (var i = 0; i < isMenuData["list"].length; i++) {
+                      if (isMenuData["list"][i]['value'] == item.IS_MENU)
+                          return isMenuData["list"][i]['key']
+                  }
+                  return item.IS_MENU;
+	        	}},
+	        	{ display: '图标路径', name: 'NAV_ICON', align: 'left', editor: { type: 'text'}, width: '11%'},
+	        	{ display: '目标iframe容器id', name: 'TARGET', align: 'center', editor: { type: 'select', data:targetData}, width: '11%'},
+	        	{ display: '图标显示宽度', name: 'NAV_ICON_WIDTH', align: 'center', editor: { type: 'text'}, width: '10%'},
+	        	{ display: '图标显示高度', name: 'NAV_ICON_HEIGHT', align: 'center', editor: { type: 'text'}, width: '10%'},
+	        	{ display: '备注', name: 'REMARK', align: 'left', editor: { type: 'text'}, width: '11%'},
+	       		{ display: '操作', isAllowHide: false, align: 'center', width:"11%",
+					 render: function (rowdata, rowindex, value, column){
+					 	if(rowdata.parentId!= -1){
+					 	 	return '<div class="padding_top4 padding_left5">'
+                                 + '<span class="img_add hand" title="新增子节点" onclick='+'addNewRow("' + rowdata.ID + '",'+rowindex+')'+'></span>'
+                                 + '<span class="img_btn_up2 hand" title="上移" onclick='+'goUp("' + rowdata.ID + '",'+rowindex+')'+'></span>'
+                                 + '<span class="img_btn_down2 hand" title="下移" onclick='+'goDown("' + rowdata.ID + '",'+rowindex+')'+'></span>' 
+                                 + '<span class="img_delete hand" title="删除" onclick='+'onDelete("' + rowdata.ID + '",'+rowindex+')'+'></span>'
+                             + '</div>';
+					 	}
+					 	
+					 	else{
+					 		return '<div class="padding_top4 padding_left5">'
+                                 + '<span class="icon_add hand" title="新增子节点" onclick="addNewRow(' + rowdata.ID + ','+rowindex + ')">新增子节点</span>'
+                             + '</div>';
+					 	}
+	                 }
+	            }
+	        ], 
+	        height: '100%', width:"100%",rownumbers:true,checkbox:false,usePager: false,url:'/popedom/list',tree: { columnId: 'ID' },autoCheckChildren:false,
+	        enabledEdit: true,onAfterEdit: onAfterEdit,
+	        toolbar:{
+	       	 items:[
+	       		  {text: '新增', click: function add(){addNewRow(0,null);}, iconClass: 'icon_add'}
+	       	 ]
+	        }
+	    });
+	}
+	
+	function addNewRow(rowid,rowindex){
+	    var rowData={
+			POPEDOM_NAME : "新增",
+			//ID : '',
+			PARENT_ID : rowid
+		}
+		if(rowid == 0) {rowData["IS_MENU"] = 1};
+		//在这里做新增处理
+	  	$.post("/popedom/save", f_createModelObj(rowData, "popedom"), function(result){
+	  		g.loadData();
+		  	if (result.msg) {
+		  		top.Dialog.alert(result.msg);
+	    	}
+        },"json");	
+	}
+	
+	function goUp(id,rowindex){
+		var gg = g.getRow(rowindex);
+		var mg = g.getRow(rowindex-1);
+		while (mg != null && gg.PARENT_ID != mg.PARENT_ID){
+			mg = g.getRow(--rowindex);
+		}
+		if(mg == null) {top.Dialog.alert("不能移动了!");return;}
+		var mid = mg.ID;
+		
+	  	$.post("/popedom/exchangePosition", {id:id,mid:mid}, function(result){
+		  	if(result.msg){
+		  		top.Dialog.alert(result.msg);
+	    	} else {	    		
+	    		g.loadData();
+	    	}
+        },"json");
+	}
+	
+	function goDown(id,rowindex){
+		var gg = g.getRow(rowindex);
+		var mg = g.getRow(rowindex+1);
+		while (mg != null && gg.PARENT_ID != mg.PARENT_ID){
+			mg = g.getRow(++rowindex);
+		}
+		if(mg == null) {top.Dialog.alert("不能移动了!");return;}
+		var mid = mg.ID;
+	  	$.post("/popedom/exchangePosition", {id:id,mid:mid}, function(result){
+		  	if(result.msg){
+		  		top.Dialog.alert(result.msg);
+	    	} else {	    		
+	    		g.loadData();
+	    	}
+        },"json");
+	}
+	
+	//编辑后事件 
+    function onAfterEdit(e)
+    {
+    //var str="编辑后事件，用于ajax提交处理。列名："+e.column.name+"；行号："+e.rowindex+"；编辑后的值："+e.value+"\n";
+	//alert("此处用于ajax提交处理。列名："+e.column.name+"，id："+e.record.id+"，编辑后的值："+e.value+"\n")
+	    var obj={};
+	    obj["popedom.ID"]=e.record.ID;
+	    obj["popedom."+e.column.name]=e.value;
+	    $.post("/popedom/update", obj, function(result){
+	    	if(result.msg){
+		  		top.Dialog.alert(result.msg);
+	    	}
+	    });
+    }
+   //删除	
+	function onDelete(rowid,rowidx){
+		top.Dialog.confirm("确定要删除该记录吗？",function(){
+		    $.post("/popedom/delete", {id:rowid}, function(result){
+		    	g.loadData();
+		    	if(result.msg){
+			  		top.Dialog.alert(result.msg);
+		    	}
+		    });
+		});
+	}     
+</script>	
+</body>
+</html>

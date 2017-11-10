@@ -1,0 +1,52 @@
+<script type="text/javascript">
+
+	var submitNow = function() {
+		$('#updatePwdForm').form('submit', {
+		    url:'/updatePwd',
+		    onSubmit: function(){
+				// do some check
+				// return false to prevent submit;
+		    },
+		    success:function(data){
+		    	var rs = eval('(' + data + ')');
+		    	$.messager.show({
+		    		title:'提示',
+		    		msg:rs.msg,
+		    		timeout:5000,
+		    		showType:'slide'
+		    	});
+		    	if(rs.msg=="密码修改成功!"){
+		    		$("#updatePwd").window('close');
+		    	}
+		    }
+		});
+	};
+	var submitForm = function() {
+		if ($('#updatePwd').form('validate')) {
+			submitNow();
+		}
+	};
+</script>
+<div id="updatePwd" class="easyui-window" title="修改密码" data-options="modal:true,closed:true,iconCls:'icon-save'" style="width:300px;">
+	<form id="updatePwdForm" method="post" action="/updatePwd" onsubmit="return false;">
+		<div style="padding:10px">
+	        <table>
+	            <tr>
+	                <td>旧密码:</td>
+	                <td><input class="easyui-textbox" type="text" name="oldPwd" data-options="required:true"></input></td>
+	            </tr>
+	            <tr>
+	                <td>新密码:</td>
+	                <td><input class="easyui-textbox" type="password" name="newPwd" data-options="required:true"></input></td>
+	            </tr>
+	            <tr>
+	                <td>确认密码:</td>
+	                <td><input class="easyui-textbox" type="password" name="rePwd" data-options="required:true"></input></td>
+	            </tr>
+	        </table>
+		</div>
+        <div class="dialog-button" style="margin-bottom:0">
+        	<button id="btn" onclick="submitForm();" class="easyui-linkbutton" data-options="iconCls:'icon-save'" >保存</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,193 @@
+#include("/WEB-INF/view/common/qui/header.html")
+<!--数据表格start-->
+<script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+<!--数据表格end-->
+
+<!--表单异步提交start-->
+<script src="../../libs/js/form/form.js" type="text/javascript"></script>
+<!--表单异步提交end-->
+
+</head>
+<body>
+<div class="box2" panelTitle="查询用户" id="searchPanel">
+	<form id="queryForm" method="post">
+		<input type="hidden" id="parentId" name="parentId" value="1"/>
+		<table>
+			<tr>
+				<td>用户代码：</td>
+				<td>
+					<input type="text" id="searchInput" name="user.USER_CODE" />
+				</td>
+				<td>用户名：</td>
+				<td>
+					<input type="text" id="searchInput" name="user.USER_NAME" />
+				</td>
+				<td><button type="button" onclick="searchHandler()"><span class="icon_find">查询</span></button></td>
+				<td><button type="button" onclick="resetSearch()"><span class="icon_reload">重置</span></button></td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+	<div class="padding_right5">
+		<div id="dataBasic"></div>
+    </div>
+
+<script type="text/javascript">
+
+var grid = null;
+
+function initComplete(){
+	//当提交表单刷新本页面时关闭弹窗
+	top.Dialog.close();
+	/**/
+	grid = $("#dataBasic").quiGrid({
+		columns:[
+			{ display: '用户代码', name: 'USER_CODE', align: 'center', width: '14%'},
+			{ display: '用户名（显示名）', name: 'USER_NAME', align: 'center', width: '14%'},
+			{ display: '角色名称', name: 'ROLE_NAME', align: 'center', width: '14%'},
+			{ display: '备注', name: 'REMARK', align: 'center', width: '14%'},
+       		{ display: '操作', isAllowHide: false, align: 'center', width:'14%',
+				 render: function (rowdata, rowindex, value, column){
+                	    return '<div class="padding_top4 padding_left5">'
+                                + '<span class="img_list hand" title="查看" onclick='+'onView("' + rowdata.ID + '")'+'></span>'
+                                + '<span class="img_edit hand" title="修改" onclick='+'onEdit("' + rowdata.ID + '")'+'></span>' 
+                                + '<span class="img_delete hand" title="删除" onclick='+'onDelete("' + rowdata.ID+'",'+rowindex + ')'+'></span>'
+                           	  + '</div>';
+                 }
+            }
+		  ],
+	 url: '/user/list', sortName: 'userId',rownumbers:true,checkbox:true,
+     height: '100%', width:"100%",pageSize:10,percentWidthMode:true,
+     toolbar:{
+    	 items:[
+    		  {text: '新增', click: addUnit,    iconClass: 'icon_add'},
+    		  { line : true },
+    		  {text: '批量删除', click: deleteUnit, iconClass: 'icon_delete'}
+    		  
+    		]
+     	}
+	});
+
+	
+	//监听查询框的回车事件
+	 $("#searchInput").keydown(function(event){
+	 	if(event.keyCode==13){
+			searchHandler();
+		}
+	 })
+	 
+	 $("#searchPanel").bind("stateChange",function(e,state){
+		grid.resetHeight();
+	});
+}
+
+//新增
+function addUnit() {
+	top.Dialog.open({
+			URL:"/user/addView",
+			Title:"添加",Width:500,Height:380});
+}
+//查看
+function onView(rowid){
+	top.Dialog.open({
+		URL:"/user/detailView?id="+rowid,
+		Title:"查看",Width:500,Height:240});
+}
+
+//修改	
+function onEdit(rowid){
+	top.Dialog.open({
+		URL:"/user/updateView?userId=" + rowid,
+		Title:"修改",Width:500,Height:380});
+}
+//删除	
+function onDelete(rowid,rowidx){
+	top.Dialog.confirm("确定要删除该记录吗？",function(){
+	  	//删除记录
+	  	$.post("/user/delete",
+	  			{"id":rowid},
+	  			function(result){
+	  				handleResult(result.status);
+				},"json");
+				//刷新表格
+				grid.loadData();
+		});
+}
+	
+	
+//批量删除
+function deleteUnit() {
+	var rows = grid.getSelectedRows();
+	var rowsLength = rows.length;
+	
+	if(rowsLength == 0) {
+		top.Dialog.alert("请选中要删除的记录!");
+		return;
+	}
+	top.Dialog.confirm("确定要删除吗？",function(){
+		$.post("/user/deleteBatch",
+					//获取所有选中行
+					getSelectIds(grid),
+					function(result){
+						handleResult(result.status);
+					},
+					"json");
+		});
+}
+//删除后的提示
+function handleResult(result){
+	if(result == 1){
+		top.Dialog.alert("删除成功！",null,null,null,1);
+		grid.loadData();
+	}else{
+		top.Dialog.alert("删除失败！");
+	}
+}
+
+//获取所有选中行获取选中行的id 格式为 ids=1&ids=2 
+function getSelectIds(grid) {
+	var selectedRows = grid.getSelectedRows();
+	var selectedRowsLength = selectedRows.length;
+	var ids = "";
+	
+	for(var i = 0;i<selectedRowsLength;i++) {
+		ids += selectedRows[i].ID + ",";
+	}
+	
+	//去掉末尾的","号
+	ids = ids.substring(0, ids.length-1);
+	
+	return {"ids":ids};
+}
+
+//查询
+function searchHandler(){
+	var query = $("#queryForm").formToArray(); 
+    grid.setOptions({ params : query});
+    //页号重置为1
+    grid.setNewPage(1);
+    grid.loadData();//加载数据
+}
+
+//重置查询
+function resetSearch(){
+	$("#queryForm")[0].reset();
+    $('#search').click();
+}
+
+//刷新表格数据并重置排序和页数
+function refresh(isUpdate){
+	if(!isUpdate){
+		//重置排序
+    	grid.options.sortName='userId';
+    	grid.options.sortOrder="desc";
+    	//页号重置为1
+		grid.setNewPage(1);
+	}
+	grid.loadData();
+}
+
+</script>	
+</body>
+</html>

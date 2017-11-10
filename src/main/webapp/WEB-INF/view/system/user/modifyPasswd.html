@@ -1,0 +1,47 @@
+#include("/WEB-INF/view/common/qui/header.html")
+
+<!-- 表单验证start -->
+<script src="/libs/js/form/validationRule.js" type="text/javascript"></script>
+<script src="/libs/js/form/validation.js" type="text/javascript"></script>
+<!-- 表单验证end -->
+
+</head>
+<body>
+<div class="box1" id="formContent" whiteBg="true">
+	<form id="myFormId" onsubmit="return false;" method="post">
+	<table class="tableStyle" formMode="transparent">
+		<tr>
+			<td>原密码：</td><td><input type="password" name="oldPwd" id="oldPwd"  class="validate[required]" /><span class="star">*</span> </td>
+		</tr>
+		<tr>
+			<td>新密码：</td><td><input type="password" name="newPwd1" id="newPwd1" class="validate[required]" /><span class="star">*</span></td>
+		</tr>		
+		<tr>
+			<td>确认新密码：</td><td><input type="password" name="newPwd2" id="newPwd2" class="validate[required,confirm[newPwd1]]" /><span class="star">*</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button type="button"  onclick="submitHandler()">提交</button>
+				<input type="button" value="取消" onclick='top.Dialog.close()'/>
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+
+<script type="text/javascript">
+	function submitHandler() {
+		var valid = $('#myFormId').validationEngine({returnIsValid: true});
+		if(valid){
+			$.post("/user/savePasswd", $('#myFormId').serializeArray(), function(data) {
+				top.Dialog.alert(data.msg,function(){
+					if(data.modifyOk){
+						top.frmright.location.href="/";
+					}								
+				});
+			});
+		 }	
+	}
+</script>
+</body>	
+</html>

@@ -1,0 +1,233 @@
+#include("/WEB-INF/view/common/qui/header.html")
+<!--数据表格start-->
+<script src="../../libs/js/table/quiGrid.js" type="text/javascript"></script>
+<!--数据表格end-->
+
+<!--表单异步提交start-->
+<script src="../../libs/js/form/form.js" type="text/javascript"></script>
+<!--表单异步提交end-->
+
+<!--树组件start -->
+<script type="text/javascript" src="/libs/js/tree/ztree/ztree.js"></script>
+<link href="/libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+<!--树组件end -->
+
+</head>
+<body>
+
+<div class="box2" panelTitle="查询角色" id="searchPanel">
+	<form id="queryForm" method="post">
+		<input type="hidden" id="parentId" name="parentId" value="1"/>
+		<table>
+			<tr>
+				<td>角色名称：</td>
+				<td>
+					<input type="text" id="searchInput" name="role.ROLE_NAME" />
+				</td>
+				<td><button type="button" onclick="searchHandler()"><span class="icon_find">查询</span></button></td>
+				<td><button type="button" onclick="resetSearch()"><span class="icon_reload">重置</span></button></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<div height="100%">
+	<table width="100%" >
+		<tr>
+			<td width="80%" class="ver01">
+				<div class="box2"  overflow="true" showStatus="false" panelTitle="角色列表">
+					<div id="dataBasic"></div>
+				</div>
+			</td>
+			<td class="ver01">
+				<div class="box2"  overflow="true" panelTitle="权限列表" statusType="link" statusText="保存" panelUrl="javascript:savePopedoms()">
+				  	<div id="popedomDiv" style="overflow:auto"><ul id="tree-1" class="ztree"></ul></div>
+			  	</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+
+var grid = null;
+
+function initComplete(){
+	//当提交表单刷新本页面时关闭弹窗
+	top.Dialog.close();
+	grid = $("#dataBasic").quiGrid({
+		columns:[
+			{ display: '角色名称', name: 'ROLE_NAME',  id:'ID', align: 'center', width: '30%'},
+			{ display: '注释', name: 'REMARK', align: 'center', width: '56%'},
+       		{ display: '操作', isAllowHide: false, align: 'center', width:'14%',
+				 render: function (rowdata, rowindex, value, column){
+					 return '<div class="padding_top4 padding_left5">'
+                	   		    + '<span class="img_add hand" title="新增子节点" onclick='+'addNewRow("' + rowdata.ID + '",'+rowindex+')'+'></span>'
+                                + '<span class="img_list hand" title="查看" onclick='+'onView("' + rowdata.ID + '")'+'></span>'
+                                + '<span class="img_edit hand" title="修改" onclick='+'onEdit("' + rowdata.ID + '")'+'></span>' 
+                                + '<span class="img_delete hand" title="删除" onclick='+'onDelete("' + rowdata.ID+'",'+rowindex + ')'+'></span>'
+                            + '</div>';
+                 }
+            }
+		  ],
+	 url: '/role/list', sortName: 'roleId',rownumbers:true,checkbox:false,
+     height: '100%', width:"100%",pageSize:10,percentWidthMode:true,tree: { columnId: 'ID' },autoCheckChildren:false,
+     onSelectRow : function (rowdata, rowindex, rowDomElement) {
+    	 getPopeDomList(rowdata.ID);
+		//设置权限列表的高度
+   		$('#popedomDiv').height($("#dataBasic").height());
+     },
+     toolbar:{
+    	 items:[
+    		  {text: '新增', click: addUnit, iconClass: 'icon_add'}
+    		]
+     	}
+	});
+	//初始化权限列表
+	getPopeDomList(null);
+
+	//监听查询框的回车事件
+	 $("#searchInput").keydown(function(event){
+	 	if(event.keyCode==13){
+			searchHandler();
+		}
+	 })
+	 
+	 $("#searchPanel").bind("stateChange",function(e,state){
+		grid.resetHeight();
+	});
+}
+
+//新增子节点
+function addNewRow(rowid,rowindex){
+	top.Dialog.open({
+		URL:"/role/addView?parentId="+rowid,
+		Title:"添加",Width:500,Height:200});
+}
+
+//新增
+function addUnit() {
+	top.Dialog.open({
+			URL:"/role/addView",
+			Title:"添加",Width:500,Height:200});
+}
+//查看
+function onView(rowid){
+	top.Dialog.open({
+		URL:"/role/detailView?id="+rowid,
+		Title:"查看",Width:500,Height:200});
+}
+
+//修改	
+function onEdit(rowid){
+	top.Dialog.open({
+		URL:"/role/updateView?roleId=" + rowid,
+		Title:"修改",Width:500,Height:200});
+}
+//删除	
+function onDelete(rowid,rowidx){
+	top.Dialog.confirm("确定要删除该记录吗？",function(){
+	  	//删除记录
+	  	$.post("/role/delete",
+	  			{"id":rowid},
+	  			function(result){
+	  				handleResult(result.status);
+				},"json");
+				//刷新表格
+				grid.loadData();
+		});
+}
+	
+//删除后的提示
+function handleResult(result){
+	if(result == 1){
+		top.Dialog.alert("删除成功！",null,null,null,1);
+		grid.loadData();
+	}else{
+		top.Dialog.alert("删除失败！");
+	}
+}
+
+//获取所有选中行获取选中行的id 格式为 ids=1&ids=2 
+function getSelectIds(grid) {
+	var selectedRows = grid.getSelectedRows();
+	var selectedRowsLength = selectedRows.length;
+	var ids = "";
+	
+	for(var i = 0;i<selectedRowsLength;i++) {
+		ids += selectedRows[i].ID + ",";
+	}
+	
+	//去掉末尾的","号
+	ids = ids.substring(0, ids.length-1);
+	
+	return {"ids":ids};
+}
+
+//查询
+function searchHandler(){
+	var query = $("#queryForm").formToArray(); 
+    grid.setOptions({ params : query});
+    //页号重置为1
+    grid.setNewPage(1);
+    grid.loadData();//加载数据
+}
+
+//重置查询
+function resetSearch(){
+	$("#queryForm")[0].reset();
+   $('#search').click();
+}
+
+//刷新表格数据并重置排序和页数
+function refresh(isUpdate){
+	if(!isUpdate){
+		//重置排序
+    	grid.options.sortName='roleId';
+    	grid.options.sortOrder="desc";
+    	//页号重置为1
+		grid.setNewPage(1);
+	}
+	grid.loadData();
+}
+
+//获取权限列表
+function getPopeDomList(roleId) {
+	$.get("/popedomMatch/list", {roleId:roleId}, function(data){
+		var setting1 = {
+			    check: {
+			        enable: true
+			    }
+			};
+		$.fn.zTree.init($("#tree-1"), setting1, data);
+	});
+}
+
+//保存权限
+function savePopedoms() {
+    //获取zTree对象
+    var zTree = $.fn.zTree.getZTreeObj("tree-1");
+
+    //得到选中的数据集
+    var checkedNodes = zTree.getCheckedNodes(true);
+    
+    var msg = "";
+
+    for(var i = 0; i < checkedNodes.length; i++){
+        msg += "," + checkedNodes[i].id;
+    }
+
+    var row = grid.getSelectedRow();
+    if(row == null){
+    	top.Dialog.alert("请选择角色!"); return;
+    }
+	
+	$.post("/popedomMatch/save", {popedomIds:msg, roleId:row.ID}, function(result) {
+		if(result.msg){
+	  		top.Dialog.alert(result.msg);
+    	} else {	    		
+    		top.Dialog.alert("保存成功!");
+    	}
+	});
+}
+</script>	
+</body>
+</html>

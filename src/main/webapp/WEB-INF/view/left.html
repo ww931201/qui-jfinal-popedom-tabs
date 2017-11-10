@@ -1,0 +1,70 @@
+#include("/WEB-INF/view/common/qui/header.html")
+
+<!-- 树型抽屉导航start-->
+<script type="text/javascript" src="/libs/js/tree/ztree/ztree.js"></script>
+<link href="/libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/libs/js/nav/treeAccordion_iconv.js"></script>
+<!-- 树型抽屉导航end -->
+
+<style>
+a {
+	behavior:url(/libs/js/method/focus.htc)
+}
+img {
+	behavior:url("/libs/js/method/pngFix/pngbehavior.htc");
+}
+</style>
+<script type="text/javascript">
+
+	function customHeightSet(contentHeight){
+		var fixedObj=60;
+		$("#scrollContent").height(contentHeight-fixedObj);
+	}
+	var zNodes = #(menuList ??);	
+</script>
+</head>
+<body leftFrame="true">
+<div class="padding_top5 ali02" style="height:55px;">
+<table width="100%">
+	<tr>
+		<td width="85%" class="ali03"><input type="text" id="searchKey" value=""></td>
+		<td><span class="img_find hand" title="点击查找节点" keepDefaultStyle="true" onclick="findNode()"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ali02"><a onclick="showAll()">全部展开</a>&nbsp;&nbsp;<a onclick="hideAll()">全部收缩</a></td>
+	</tr>
+</table>
+</div>
+<div id="scrollContent" style="overflow-x:hidden;">
+	<div>
+		<ul id="treeDemo" class="ztree ztree_accordition navTable"></ul>
+	</div>
+</div>		
+<script>
+
+
+function addTab(str0,str1,str2){
+	//调用方法弹出tab
+	top.frmright.tabAddHandler(str0,str1,str2)
+}
+//setTimeout(function(){showAll()},500);
+	setTimeout(function(){
+		showAll()
+		//var zTrees = $.fn.zTree.init($("#treeDemo"), setting2, zNodes);
+		var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+		var setting = zTree.setting;
+ 		setting.callback.onClick = onNodeClick2;
+		$("a","#treeDemo").removeAttr("href");
+		$("a","#treeDemo").removeAttr("target"); 
+		
+	},500)
+
+function onNodeClick2(event, treeId, zNodes){
+    	//console.log(zNodes);
+    	if(zNodes.url!=null){
+    		addTab(zNodes.id,zNodes.name,zNodes.url)
+        }
+	}
+</script>		
+</body>
+</html>

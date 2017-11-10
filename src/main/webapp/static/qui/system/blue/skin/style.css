@@ -1,0 +1,338 @@
+/*基本样式*/
+body{
+	text-align: left;
+	color:#3f3f3f;
+}
+a{
+	color: #333333;
+	text-decoration: none;
+	outline:none;
+	cursor: hand;
+	cursor: pointer;
+}
+a:hover{
+	color: #4a88df;
+	text-decoration: underline;
+}
+/*基本样式*/
+
+/*框架主体设置*/
+#mainFrame{
+	background-color:#e8f6ff; /*主体内容区颜色*/
+}
+.contentStyleLeft{
+	padding: 0 0px 0 0px; /*设置左侧内容边距*/
+}
+.contentStyle{
+	padding: 0 0px 0 4px; /*设置右侧内容边距*/
+}
+#hideCon{
+	width: 190px; /*设置左侧框架宽度*/
+}
+#bs_left{
+	width: 180px; /*设置左侧框架宽度*/
+}
+/*框架主体设置*/
+
+/*设置左侧伸缩的按钮样式*/
+.bs_leftArr{
+	width: 10px;/*竖条宽度*/
+	height: 116px;/*竖条高度*/
+	background-image: url(bs_left.jpg);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+}
+.bs_rightArr{
+	width: 10px;/*竖条宽度*/
+	height: 116px;/*竖条高度*/
+	background-image: url(bs_right.jpg);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+}
+.main_shutiao{
+	width: 10px;/*竖条容器宽度*/
+	height: 100%;
+	background-image: url(bs_arrbg.jpg);
+	background-repeat: repeat-y;
+}
+/*设置左侧伸缩的按钮样式*/
+
+/*框架左侧盒子模型*/
+.lbox_title{
+	display: none;/*当左侧盒子标题为图片时隐藏文字标题*/
+}
+.lbox_foot{
+	display: none;/*左侧盒子底部空间小时隐藏版本说明*/
+}
+#lbox_topcenter{
+	height:0;
+	overflow: hidden;
+}
+#lbox_bottomcenter{
+	height:0;
+	overflow: hidden;
+}
+/*框架左侧盒子模型*/
+
+/*框架右侧盒子模型*/
+.rbox_title{
+	display: none;/*当右侧盒子标题为图片时隐藏文字标题*/
+}
+#rbox_topcenter{
+	height:0;
+	overflow: hidden;
+}
+#rbox_bottomcenter{
+	height:0;
+	overflow: hidden;
+}
+/*框架右侧盒子模型*/
+
+/*头部与导航*/
+#hbox{
+	padding: 0px;
+}
+#bs_bannercenter{
+	width: 100%;
+	height: 88px;
+	background-image: url(bs_bannercenter.jpg);
+	background-repeat: repeat-x;
+	
+}
+#bs_bannerleft{
+	width: 100%;
+	height: 100%;
+	background-image: url(bs_bannerleft.jpg);
+	background-repeat: no-repeat;
+}
+#bs_bannerright{
+	width: 100%;
+	height: 100%;
+	background-image: url(bs_bannerright.jpg);
+	background-position: 100% 0%;
+	background-repeat: no-repeat;
+}
+
+#bs_navcenter{
+	width: 100%;
+	height: 32px;
+	background-image: url(bs_bannercenter.jpg);
+	background-repeat: repeat-x;
+	background-position: 0% 100%;
+}
+#bs_navleft{
+	width: 100%;
+	height: 100%;
+	background-image: url(bs_bannerleft.jpg);
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+}
+#bs_navright{
+	width: 100%;
+	height: 100%;
+	background-image: url(bs_bannerright.jpg);
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.bs_nav{
+	padding: 3px 0 0 5px;/*导航区的位置*/
+	color: #343233;
+	overflow:hidden;
+}
+.bs_nav a{
+	color:#343233;
+}
+.bs_nav a:hover{
+	color:#343233;
+	text-decoration:none;
+}
+.bs_navleft{
+	float: left;
+	padding:0 0 0 15px;
+	color: #343233;
+}
+.bs_navright{
+	float: right;
+	padding: 0 10px 0 0;
+}
+.bs_navleft li{
+	float:left;
+	padding-right:4px;
+}
+.fontChange{
+	padding:4px 0 0 0;
+}
+.fontChange span a{
+	height:17px;
+	line-height:17px;
+	width:17px;
+	text-align:center;
+	display:block;
+	background-image: url(click.gif);
+	background-repeat: no-repeat;
+	color: #343233;
+}
+.fontChange span a:hover{
+	background-image: url(fontBg.jpg)!important;
+	background-repeat: no-repeat;
+	text-decoration:none;
+	color:white;
+}
+.fontChange span .fontChange_cur{
+	background-image: url(fontBg.jpg)!important;
+	background-repeat: no-repeat;
+	text-decoration:none;
+	color:white;
+}
+.bs_banner_logo{
+	background-image: url(logo.png);
+	background-repeat: no-repeat;
+	width:71px;/*logo宽度*/
+	height:42px;/*logo高度*/
+	position:absolute;
+	top:15px;/*logo y坐标*/
+	left:20px;/*logo x坐标*/
+}
+.bs_banner_title{
+	background-image: url(title.png);
+	background-repeat: no-repeat;
+	width:339px;/*头部标题宽度*/
+	height:36px;/*头部标题高度*/
+	position:absolute;
+	top:20px;/*头部标题y坐标*/
+	left:100px;/*头部标题x坐标*/
+}
+.subTitle{
+	color:#ffffff;
+	font-size:18px;
+	font-weight:bold;
+	position:absolute;
+	left:430px;
+	top:30px;
+}
+/*头部与导航*/
+
+/*页脚*/
+#fbox{
+	padding: 0;
+}
+#bs_footcenter{
+	text-align: center;
+	width: 100%;
+	color: White;/*页脚字体颜色*/
+	height: 27px;/*页脚高度*/
+	line-height:27px;/*页脚行高*/
+	background-image: url(bs_footcenter.jpg);
+	background-repeat: repeat-x;
+	
+}
+#bs_footleft{
+	height:100%;
+	width:100%;
+}
+#bs_footright{
+	height:100%;
+	width:100%;
+}
+/*页脚*/
+
+/*欢迎页*/
+.welcome{
+	width: 100%;
+	height: 100%;
+	background-image: url(welcome.jpg);
+	background-repeat: no-repeat;
+	background-position: 90% 80%;
+}
+.welcomeTitle{
+	width:559px;/*欢迎页标题图宽度*/
+	height: 166px;/*欢迎页标题图高度*/
+	background-image: url(welcomeTitle.png);
+	position:absolute;
+	left:45px;
+	top:120px;
+}
+/*欢迎页*/
+
+/*treeAccordion结构*/
+.ztree_accordition *{
+	font-family:sans-serif!important;
+} 
+.ztree_accordition li span.zbutton.switch {
+    display:none!important;/*隐藏所有的加号*/
+}
+
+.ztree_accordition li a.curSelectedNode{/*第一级以外的选中后样式和高度*/
+	border-color:#008bcb!important;
+	background-color:#dbeefd!important;
+	background-image: none!important;
+	opacity:1!important;
+}
+.ztree_accordition li a{
+	height:70px!important;/*第一级以外的节点高度*/
+	display:block;
+	text-align:center;
+	width:80px;
+}
+
+.ztree_accordition li a span{
+	display:block;
+	height:30px;
+	line-height:30px;
+}
+.ztree_accordition  ul.level0{
+	padding-top:10px!important;/*第二级顶部距离第一级的底部距离*/
+	padding-left:40px!important;/*第二级内容距离左侧距离*/
+}
+.ztree_accordition{
+	padding-top:0!important;
+	padding-left:5px!important;
+}
+.ztree_accordition li a.level0 {
+	width:170px;/*第一级宽度*/
+	height: 28px!important;/*第一级高度，加上padding值才是实际高度*/
+	background-image: url(titlebar.jpg)!important;
+	background-position:center left;
+	background-repeat:no-repeat;
+	text-decoration:none;
+	text-align:left;
+	display:block;
+	border:none!important;
+	background-color:transparent!important;
+	padding-top:8px!important;/*第一级文字的上边距*/
+	padding-left:6px!important;/*第一级图标的左边距*/
+	padding-bottom:0!important;
+	margin-top:5px!important;/*每个第一级相互的距离*/
+	text-indent:8px;/*文字与图标的距离*/
+}
+.ztree_accordition li a.level0 span {
+	display:block; 
+	color: #3a3c3b; /*第一级文字颜色*/
+	font-size:14px; /*第一级字体大小*/
+	font-weight: bold;/*第一级字体粗细*/
+	word-spacing: 2px;
+	line-height:24px;
+	float:left;
+}
+.ztree_accordition li a:hover.level0{
+	text-decoration:none;/*第一级禁止下划线*/
+}
+.ztree_accordition li a.level0.curLevel0 span{
+	color:#0f317f!important;/*第一级选中后文字颜色*/
+}
+.ztree_accordition li a.level0.curLevel0{
+	background-color:transparent!important;
+	opacity:1!important;
+	background-image: url("titlebar-active.jpg")!important;/*第一级选中后背景*/
+	padding-top:6px!important;/*第一级文字的上边距*/
+	padding-left:6px!important;/*第一级图标的左边距*/
+	padding-bottom:0!important;
+}
+.ztree_accordition li a.level0 button{/*第一级按钮图标*/
+	margin-left:0px!important;
+	float:left; 
+}
+/*treeAccordion结构*/

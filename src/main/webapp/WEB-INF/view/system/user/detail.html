@@ -1,0 +1,16 @@
+#include("/WEB-INF/view/common/qui/header.html")
+</head>
+<body>
+	<div class="box1" id="formContent" whiteBg="true">
+	<table class="tableStyle" formMode="view">
+		<tr><th colspan="4">详细信息</th></tr>
+		<tr>
+		<td width="20%">用户代码：</td><td width="30%">#(user.USER_CODE ??)</td>
+		<td width="20%">用户名：</td><td width="30%">#(user.USER_NAME ??)</td>
+		</tr>
+		<tr><td>角色名称：</td><td colspan="3">#(user.ROLE_NAME ??)</td></tr>
+		<tr><td>备注：</td><td colspan="3">#(user.REMARK ??)</td></tr>
+	</table>
+	</div>
+</body>
+</html>

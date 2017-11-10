@@ -1,0 +1,45 @@
+#include("/WEB-INF/view/common/qui/header.html")
+#include("/WEB-INF/view/common/qui/jomino.html")
+</head>
+<style>
+.tip {
+    position: absolute;
+    left: 32%;
+    top: 29%;
+    color: white;
+    font-size: 3em;
+}
+</style> 
+<!--动态选项卡start-->
+<script type="text/javascript" src="../../libs/js/nav/dynamicTab.js"></script>
+<!--动态选项卡end-->
+
+<script>
+function tabAddHandler(mid,mtitle,murl){
+		tab.add( {
+		id :mid,
+		title :mtitle,
+		url :murl,
+		isClosed :true
+	});
+	tab.activate(mid);
+}
+var tab;	
+$( function() {
+	 tab = new TabView( {
+		containerId :'tab_menu',
+		pageid :'page',
+		cid :'tab1',
+		position :"top"
+	});
+});
+function customHeightSet(contentHeight){
+	$("#page").height(contentHeight-30);
+}
+</script>
+<body>
+<div id="tab_menu"></div>
+<div id="page" style="width:100%;height:100%;">
+</div>
+</body>
+</html>

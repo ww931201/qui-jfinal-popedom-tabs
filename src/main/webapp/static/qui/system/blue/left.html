@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../../libs/js/jquery.js"></script>
+<script type="text/javascript" src="../../libs/js/language/cn.js"></script>
+<script type="text/javascript" src="../../libs/js/framework.js"></script>
+<link href="../../libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../../" scrollerY="false"/>
+<link rel="stylesheet" type="text/css" id="customSkin"/>
+<!--框架必需end-->
+
+<!-- 树型抽屉导航start-->
+<script type="text/javascript" src="../../libs/js/tree/ztree/ztree.js"></script>
+<link href="../../libs/js/tree/ztree/ztree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../libs/js/nav/treeAccordion_iconv.js"></script>
+<!-- 树型抽屉导航end -->
+
+<style>
+a {
+	behavior:url(../../libs/js/method/focus.htc)
+}
+img {
+	behavior:url("../../libs/js/method/pngFix/pngbehavior.htc");
+}
+</style>
+<script type="text/javascript">
+	var zNodes =[
+		{ id:3001, parentId:0, name:"表单模板",navIconButton:"skin/icons/icon_1.png",navIconWidth:24,navIconHeight:24},
+		{ id:101, parentId:3001, name:"页面中的表单",url:"../../sample_skin/normal/form-page.html", target:"frmright",navIcon:"../../libs/icons/png/01.png",navIconWidth:40,navIconHeight:40},
+		{ id:102, parentId:3001, name:"弹窗中的表单",url:"../../sample_skin/normal/form-pop.html", target:"frmright",navIcon:"../../libs/icons/png/02.png",navIconWidth:40,navIconHeight:40},
+		
+		{ id:3002, parentId:0, name:"表格模板",navIconButton:"skin/icons/icon_2.png",navIconWidth:24,navIconHeight:24},
+		{ id:201, parentId:3002, name:"页面中的grid表格",url:"../../sample_skin/normal/grid-page.html", target:"frmright",navIcon:"../../libs/icons/png/03.png",navIconWidth:40,navIconHeight:40},
+		{ id:202, parentId:3002, name:"弹窗中的grid表格",url:"../../sample_skin/normal/grid-pop.html", target:"frmright",navIcon:"../../libs/icons/png/04.png",navIconWidth:40,navIconHeight:40},
+		{ id:203, parentId:3002, name:"页面中的table表格",url:"../../sample_skin/normal/table-page.html", target:"frmright",navIcon:"../../libs/icons/png/05.png",navIconWidth:40,navIconHeight:40},
+		{ id:204, parentId:3002, name:"弹窗中的table表格",url:"../../sample_skin/normal/table-pop.html", target:"frmright",navIcon:"../../libs/icons/png/06.png",navIconWidth:40,navIconHeight:40},
+		
+		{ id:3003, parentId:0, name:"选项卡模板",navIconButton:"skin/icons/icon_3.png",navIconWidth:24,navIconHeight:24},
+		{ id:301, parentId:3003, name:"页面中的选项卡",url:"../../sample_skin/normal/tab-page.html", target:"frmright",navIcon:"../../libs/icons/png/07.png",navIconWidth:40,navIconHeight:40},
+		{ id:302, parentId:3003, name:"弹窗中的选项卡",url:"../../sample_skin/normal/tab-pop.html", target:"frmright",navIcon:"../../libs/icons/png/08.png",navIconWidth:40,navIconHeight:40},
+		
+		{ id:3004, parentId:0, name:"布局模板",navIconButton:"skin/icons/icon_4.png",navIconWidth:24,navIconHeight:24},
+		{ id:401, parentId:3004, name:"单级纵向导航",url:"../../sample_skin/normal/nav-single.html", target:"frmright",navIcon:"../../libs/icons/png/09.png",navIconWidth:40,navIconHeight:40},
+		{ id:402, parentId:3004, name:"双级纵向导航",url:"../../sample_skin/normal/nav-double.html", target:"frmright",navIcon:"../../libs/icons/png/10.png",navIconWidth:40,navIconHeight:40},
+		{ id:403, parentId:3004, name:"分隔条",url:"../../sample_skin/normal/spliter.html", target:"frmright",navIcon:"../../libs/icons/png/11.png",navIconWidth:40,navIconHeight:40},
+		
+		{ id:3005, parentId:0, name:"图片模板",navIconButton:"skin/icons/icon_5.png",navIconWidth:24,navIconHeight:24},
+		{ id:501, parentId:3005, name:"图片列表",url:"../../sample_skin/normal/pic-list.html", target:"frmright",navIcon:"../../libs/icons/png/12.png",navIconWidth:40,navIconHeight:40},
+		
+		
+		{ id:3006, parentId:0, name:"情景模板",navIconButton:"skin/icons/icon_6.png",navIconWidth:24,navIconHeight:24},
+		{ id:601, parentId:3006, name:"机构维护",url:"../../sample_skin/normal/org-management.html", target:"frmright",navIcon:"../../libs/icons/png/13.png",navIconWidth:40,navIconHeight:40},
+		{ id:602, parentId:3006, name:"用户管理",url:"../../sample_skin/normal/user-management.html", target:"frmright",navIcon:"../../libs/icons/png/14.png",navIconWidth:40,navIconHeight:40},
+		{ id:603, parentId:3006, name:"角色管理",url:"../../sample_skin/normal/role-management.html", target:"frmright",navIcon:"../../libs/icons/png/15.png",navIconWidth:40,navIconHeight:40},
+		{ id:604, parentId:3006, name:"资源分配(按用户)",url:"../../sample_skin/normal/user-assignment.html", target:"frmright",navIcon:"../../libs/icons/png/16.png",navIconWidth:40,navIconHeight:40},
+		{ id:605, parentId:3006, name:"资源分配(按角色)",url:"../../sample_skin/normal/role-assignment.html", target:"frmright",navIcon:"../../libs/icons/png/17.png",navIconWidth:40,navIconHeight:40},
+		{ id:606, parentId:3006, name:"综合box容器布局",url:"../../sample_skin/normal/layout-box.html", target:"frmright",navIcon:"../../libs/icons/png/18.png",navIconWidth:40,navIconHeight:40}
+		
+	];
+	var fixedObj=60;
+	function customHeightSet(contentHeight){
+		$("#scrollContent").height(contentHeight-fixedObj);
+	}
+</script>
+</head>
+<body leftFrame="true">
+<div class="padding_top5 ali02" style="height:55px;">
+<table width="100%">
+	<tr>
+		<td width="85%" class="ali03"><input type="text" id="searchKey" value=""></td>
+		<td><span class="img_find hand" title="点击查找节点" keepDefaultStyle="true" onclick="findNode()"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2" class="ali02"><a onclick="showAll()">全部展开</a>&nbsp;&nbsp;<a onclick="hideAll()">全部收缩</a></td>
+	</tr>
+</table>
+</div>
+<div id="scrollContent" style="overflow-x:hidden;">
+	<div>
+		<ul id="treeDemo" class="ztree ztree_accordition"></ul>
+	</div>
+</div>				
+</body>
+</html>

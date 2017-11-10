@@ -1,0 +1,19 @@
+<!--修正IE6不支持PNG图start-->
+<style>
+img {
+	behavior:url("/libs/js/method/pngFix/pngbehavior.htc");
+}
+</style>
+<!--修正IE6不支持PNG图end-->
+
+<!--动画方式入场效果start-->
+<script type="text/javascript" src="/libs/js/pic/jomino.js"></script>
+<script>
+	 $(function(){
+		$(".navIcon").jomino();
+	});
+	function customHeightSet(contentHeight){
+		$("#scrollContent").height(contentHeight);
+	}
+</script>
+<!--动画方式入场效果end-->
